@@ -39,10 +39,10 @@ fn isPangram(str: []const u8) bool {
     // first we check if the string has at least 26 characters
     if (str.len < 26) return false;
 
-    // we uses a 32 bit variable of which we need 26 bits
+    // we use a 32 bit variable of which we need 26 bits
     var bits: u32 = 0;
 
-    // loop about all characters in the string
+    // loop over all characters in the string
     for (str) |c| {
         // if the character is an alphabetical character
         if (ascii.isASCII(c) and ascii.isAlphabetic(c)) {
@@ -60,5 +60,5 @@ fn isPangram(str: []const u8) bool {
     // and if so, we know the given string is a pangram
     //
     // but what do we have to compare?
-    return bits == 0x..???;
+    return bits == 0b11111111111111111111111111;
 }
